@@ -1,9 +1,12 @@
 import React from 'react';
+import Statistics from '../Statistics/Statistics';
+import Topics from '../Topics/Topics';
 
 const Home = () => {
     return (
         <div>
-            <h1>This is home</h1>
+            <Topics />
+            <Statistics />
         </div>
     );
 };

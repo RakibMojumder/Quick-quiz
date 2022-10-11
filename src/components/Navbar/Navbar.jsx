@@ -10,7 +10,7 @@ const Navbar = () => {
           rel="noopener noreferrer"
           href="/"
           aria-label="Back to homepage"
-          className="flex items-center p-2"
+          className="flex items-center font-semibold p-2"
         >
           <img className="h-16" src={logo} alt="" />
           <h1 className="text-3xl -ml-3 font-bold">uick Quiz</h1>
@@ -20,7 +20,11 @@ const Navbar = () => {
             <NavLink
               rel="noopener noreferrer"
               to="/home"
-              className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+              className={({ isActive }) =>
+                isActive
+                  ? "flex text-blue-500 font-semibold items-center px-4 -mb-1 border-b-2 border-transparent"
+                  : "flex items-center font-semibold px-4 -mb-1 border-b-2 border-transparent"
+              }
             >
               Home
             </NavLink>
@@ -29,7 +33,11 @@ const Navbar = () => {
             <NavLink
               rel="noopener noreferrer"
               to="/topics"
-              className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+              className={({ isActive }) =>
+                isActive
+                  ? "flex text-blue-500 font-semibold items-center px-4 -mb-1 border-b-2 border-transparent"
+                  : "flex items-center font-semibold px-4 -mb-1 border-b-2 border-transparent"
+              }
             >
               Topics
             </NavLink>
@@ -38,7 +46,11 @@ const Navbar = () => {
             <NavLink
               rel="noopener noreferrer"
               to="/statistics"
-              className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+              className={({ isActive }) =>
+                isActive
+                  ? "flex text-blue-500 font-semibold items-center px-4 -mb-1 border-b-2 border-transparent"
+                  : "flex items-center font-semibold px-4 -mb-1 border-b-2 border-transparent"
+              }
             >
               Statistics
             </NavLink>
@@ -47,7 +59,11 @@ const Navbar = () => {
             <NavLink
               rel="noopener noreferrer"
               to="/blog"
-              className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+              className={({ isActive }) =>
+                isActive
+                  ? "flex text-blue-500 font-semibold items-center px-4 -mb-1 border-b-2 border-transparent"
+                  : "flex items-center font-semibold px-4 -mb-1 border-b-2 border-transparent"
+              }
             >
               Blog
             </NavLink>
