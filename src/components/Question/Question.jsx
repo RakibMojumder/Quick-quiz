@@ -1,11 +1,12 @@
 import { faL } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 const Question = ({ quest, indx }) => {
+  const [isActive, setActive] = useState(false);
   const { options, correctAnswer, question } = quest;
-
-  // console.log(quest);
 
   const findCorrectAns = (e) => {
     const value = e.target.value;
@@ -17,11 +18,25 @@ const Question = ({ quest, indx }) => {
     }
   };
 
+  // const seeCorrectAns = () => {
+  //   for (const option of options) {
+  //     if (option === correctAnswer) {
+  //       setActive(!isActive);
+  //     }
+  //   }
+  // };
+
   return (
     <div className="border bg-gray-200 rounded-md my-10 px-4 md:px-10 w-[70%] mx-auto text-center py-10">
-      <p className="mb-8">
+      <p className="mb-8 relative">
         <span>
           Quiz No - {indx} {question}
+        </span>
+        <span
+          className="absolute text-lg right-0 -top-7"
+          title="see the correct answer"
+        >
+          <FontAwesomeIcon icon={faEye} />
         </span>
       </p>
       <div className="options flex flex-col">
