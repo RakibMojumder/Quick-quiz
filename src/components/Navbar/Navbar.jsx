@@ -5,7 +5,7 @@ import logo from "../.././assets/img/logo.png";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="px-4 py-3 border-b-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-20 lg:px-8">
+    <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-20 lg:px-8">
       <div className="relative flex items-center justify-between">
         <NavLink
           to="/"
@@ -60,15 +60,15 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/blog"
-              aria-label="Blog"
+              to="/faq"
+              aria-label="faq"
               className={({ isActive }) =>
                 isActive
                   ? "border-b-2 border-gray-700 font-semibold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                   : "font-semibold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
               }
             >
-              Blog
+              FAQ
             </NavLink>
           </li>
         </ul>
@@ -172,11 +172,11 @@ const Navbar = () => {
                     </li>
                     <li>
                       <NavLink
-                        to="/blog"
-                        aria-label="Blog"
+                        to="/faq"
+                        aria-label="faq"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Blog
+                        FAQ
                       </NavLink>
                     </li>
                   </ul>

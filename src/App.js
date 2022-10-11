@@ -1,6 +1,8 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import ErrorPage from './components/ErrorPage/ErrorPage';
+import FAQ from './components/FAQ/FAQ';
 import Home from './components/Home/Home';
 import Quiz from './components/Quiz/Quiz';
 import Statistics from './components/Statistics/Statistics';
@@ -13,6 +15,7 @@ function App() {
     {
       path: '/',
       loader: async () => await fetch(`https://openapi.programming-hero.com/api/quiz`),
+      errorElement: <ErrorPage />,
       element: <Main />,
       children: [
         { path: '/', element: <Home /> },
@@ -23,7 +26,8 @@ function App() {
           loader: async ({ params }) => await fetch(`https://openapi.programming-hero.com/api/quiz/${params.topicId}`),
           element: <Quiz />
         },
-        { path: '/statistics', element: <Statistics /> }
+        { path: '/statistics', element: <Statistics /> },
+        { path: '/faq', element: <FAQ /> }
       ]
     }
   ]);

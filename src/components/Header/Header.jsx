@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import headerImg from "../../assets/img/header-img.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   return (
@@ -30,9 +32,12 @@ const Header = () => {
           <div className="text-center md:text-left">
             <NavLink
               to="/topics"
-              className="bg-blue-500 px-8 py-2 mr-10 rounded-md text-white"
+              className="bg-blue-500 px-8 py-2 rounded-md text-white"
             >
-              Go To Topics
+              Go To Topics{" "}
+              <span className="ml-2">
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
             </NavLink>
           </div>
         </div>
