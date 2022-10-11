@@ -12,7 +12,7 @@ const ErrorPage = () => {
       </div>
       <p className="my-4 text-5xl font-bold">{error.status}</p>
       <p className="text-lg">
-        This Page Is {error.statusText || error.message}
+        This Page is {error.statusText || error.message}
       </p>
       <NavLink
         to="/home"

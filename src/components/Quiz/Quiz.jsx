@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useLoaderData } from "react-router-dom";
 import Question from "../Question/Question";
 
 const Quiz = () => {
   const quiz = useLoaderData().data;
-  const { name, questions, total } = quiz;
+  const { name, questions } = quiz;
   return (
     <div className="my-32">
       <h1 className="text-center text-3xl uppercase">
