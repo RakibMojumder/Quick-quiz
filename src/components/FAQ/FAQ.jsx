@@ -10,44 +10,38 @@ const FAQ = () => {
         <div className="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
           <details open="">
             <summary className="py-2 outline-none cursor-pointer focus:underline">
-              Optio maiores eligendi molestiae totam dolores similique?
+              What is the purpose of React Router?
             </summary>
             <div className="px-4 pb-4">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                neque in fugiat magni, quas animi enim veritatis deleniti ex.
-                Impedit.
+                React Router is a standard library for routing in React. It
+                enables the navigation among views of various components in a
+                React Application, allows changing the browser URL, and keeps
+                the UI in sync with the URL.
               </p>
             </div>
           </details>
           <details>
             <summary className="py-2 outline-none cursor-pointer focus:underline">
-              Modi dolorem veritatis culpa quos consequuntur beatae itaque
-              excepturi perspiciatis?
+              How does Context API works?
             </summary>
             <div className="px-4 pb-4">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-                aspernatur quae, eos explicabo odit minima libero veniam
-                similique quibusdam doloribus facilis ipsa accusantium vel
-                maiores corrupti! Libero voluptate a doloribus?
+                The React Context API is a way for a React app to effectively
+                produce global variables that can be passed around. This is the
+                alternative to "prop drilling" or moving props from grandparent
+                to child to parent, and so on.
               </p>
             </div>
           </details>
           <details open="">
             <summary className="py-2 outline-none cursor-pointer focus:underline">
-              Magni reprehenderit possimus debitis?
+              How does useHref Hooks works?
             </summary>
             <div className="px-4 pb-4 space-y-2">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                voluptates aspernatur dolores in consequatur doloremque
-                inventore reprehenderit, consequuntur perspiciatis architecto.
-              </p>
-              <p>
-                Sed consectetur quod tenetur! Voluptatibus culpa incidunt
-                veritatis velit quasi cupiditate unde eaque! Iure, voluptatibus
-                autem eaque unde possimus quae.
+                The useHref hook returns a URL that may be used to link to the
+                given to location. even outside of react router.
               </p>
             </div>
           </details>
