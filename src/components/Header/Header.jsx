@@ -10,23 +10,16 @@ const Header = () => {
       <div className="flex flex-col items-center justify-between lg:flex-row">
         <div className="mb-10 lg:max-w-lg lg:pr-5 lg:mb-0">
           <div className="max-w-xl mb-6">
-            <div>
-              <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-                Brand new
-              </p>
-            </div>
-            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-              The quick, brown fox
-              <br className="hidden md:block" />
-              jumps over{" "}
-              <span className="inline-block text-deep-purple-accent-400">
-                a lazy dog
+            <div></div>
+            <h2 className="max-w-lg mb-6 font-sans text-center md:text-left font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+              <span className="text-2xl block">Welcome To</span>
+              <span className="text-5xl">
+                Quick Quiz <br /> Explore New Thing
               </span>
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae. explicabo.
+              Here you can further enhance your acquired knowledge and test
+              yourself how much your know these topic
             </p>
           </div>
           <div className="text-center md:text-left">
