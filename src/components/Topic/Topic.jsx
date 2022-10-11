@@ -20,9 +20,9 @@ const Topic = ({ topic }) => {
         <p className="my-3 md:my-0">Total: {total}</p>
         <button
           onClick={() => handlePracticeQuiz(id)}
-          className="bg-blue-200 px-6 py-1 rounded-md"
+          className="bg-blue-200 px-3 md:px-5 py-1 rounded-md"
         >
-          Start Practice{" "}
+          Start Practice
           <span className="ml-2">
             <FontAwesomeIcon icon={faArrowRight} />
           </span>
