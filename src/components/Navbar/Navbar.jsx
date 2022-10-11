@@ -7,8 +7,8 @@ const Navbar = () => {
   return (
     <div className="px-4 py-3 border-b-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-20 lg:px-8">
       <div className="relative flex items-center justify-between">
-        <a
-          href="/"
+        <NavLink
+          to="/"
           aria-label="Company"
           title="Company"
           className="inline-flex items-center"
@@ -17,7 +17,7 @@ const Navbar = () => {
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
             Quick Quiz
           </span>
-        </a>
+        </NavLink>
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li>
             <NavLink
@@ -145,42 +145,38 @@ const Navbar = () => {
                   <ul className="space-y-4">
                     <li>
                       <NavLink
-                        to="/"
-                        aria-label="Our product"
-                        title="Our product"
+                        to="/home"
+                        aria-label="Home"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Product
+                        Home
                       </NavLink>
                     </li>
                     <li>
                       <NavLink
-                        to="/"
-                        aria-label="Our product"
-                        title="Our product"
+                        to="/topics"
+                        aria-label="Topics"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Features
+                        Topics
                       </NavLink>
                     </li>
                     <li>
                       <NavLink
-                        to="/"
-                        aria-label="Product pricing"
-                        title="Product pricing"
+                        to="/statistics"
+                        aria-label="Statistics"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Pricing
+                        Statistics
                       </NavLink>
                     </li>
                     <li>
                       <NavLink
-                        to="/"
-                        aria-label="About us"
-                        title="About us"
+                        to="/blog"
+                        aria-label="Blog"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        About us
+                        Blog
                       </NavLink>
                     </li>
                   </ul>

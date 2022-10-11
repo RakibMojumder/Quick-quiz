@@ -7,7 +7,7 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 const Question = ({ quest, indx }) => {
   const [isActive, setActive] = useState(false);
   const { options, correctAnswer, question } = quest;
-
+  const removePTag = question.replace(/<p>/g, "");
   const findCorrectAns = (e) => {
     const value = e.target.value;
 
@@ -28,9 +28,9 @@ const Question = ({ quest, indx }) => {
 
   return (
     <div className="border bg-gray-200 rounded-md my-10 px-4 md:px-10 w-[70%] mx-auto text-center py-10">
-      <p className="mb-8 relative">
+      <p className="mb-8 relative text-2xl">
         <span>
-          Quiz No - {indx} {question}
+          Quiz No-{indx} {removePTag.replace("</p>", "")}
         </span>
         <span
           className="absolute text-lg right-0 -top-7"
@@ -61,13 +61,15 @@ const Question = ({ quest, indx }) => {
         >
           {options[2]}
         </button>
-        <button
-          onClick={(e) => findCorrectAns(e)}
-          className="option-4 mb-3 border py-2 rounded-md bg-white"
-          value={options[3]}
-        >
-          {options[3]}
-        </button>
+        {options.length === 4 ? (
+          <button
+            onClick={(e) => findCorrectAns(e)}
+            className="option-4 mb-3 border py-2 rounded-md bg-white"
+            value={options[3]}
+          >
+            {options[3]}
+          </button>
+        ) : null}
       </div>
     </div>
   );
