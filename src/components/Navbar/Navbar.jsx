@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../.././assets/img/logo.png";
 
 const Navbar = () => {
   return (
-    <header className="bg-gray-800 text-gray-100">
+    <header className="bg-gray-200">
       <div className="container flex justify-between h-16 mx-auto">
         <a
           rel="noopener noreferrer"
@@ -12,44 +13,44 @@ const Navbar = () => {
           className="flex items-center p-2"
         >
           <img className="h-16" src={logo} alt="" />
-          <h1>Quick Quiz</h1>
+          <h1 className="text-3xl -ml-3 font-bold">uick Quiz</h1>
         </a>
         <ul className="items-stretch hidden space-x-3 md:flex">
           <li className="flex">
-            <a
+            <NavLink
               rel="noopener noreferrer"
-              href="/"
+              to="/home"
               className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
             >
               Home
-            </a>
+            </NavLink>
           </li>
           <li className="flex">
-            <a
+            <NavLink
               rel="noopener noreferrer"
-              href="/"
+              to="/topics"
               className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
             >
               Topics
-            </a>
+            </NavLink>
           </li>
           <li className="flex">
-            <a
+            <NavLink
               rel="noopener noreferrer"
-              href="/"
-              className="flex items-center px-4 -mb-1"
+              to="/statistics"
+              className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
             >
               Statistics
-            </a>
+            </NavLink>
           </li>
           <li className="flex">
-            <a
+            <NavLink
               rel="noopener noreferrer"
-              href="/"
+              to="/blog"
               className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
             >
               Blog
-            </a>
+            </NavLink>
           </li>
         </ul>
         <button className="flex justify-end p-4 md:hidden">
