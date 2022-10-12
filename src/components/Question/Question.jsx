@@ -13,6 +13,8 @@ const Question = ({
 }) => {
   const [isActive, setActive] = useState(false);
   const { options, correctAnswer, question } = quest;
+  const [color, setColor] = useState();
+  const [color2, setColor2] = useState();
 
   const findCorrectAns = (e) => {
     const value = e.target.textContent;
@@ -21,10 +23,12 @@ const Question = ({
       Swal.fire("Good job!", "Your answer is correct!", "success");
       score++;
       setScore(score);
+      setColor("bg-green-500");
     } else {
       Swal.fire("Ops!", "Your answer is wrong!", "fail");
       wrongScore++;
       setWrongScore(wrongScore);
+      setColor2("bg-red-500");
     }
   };
 
@@ -51,81 +55,30 @@ const Question = ({
           )}
         </span>
       </p>
-      <div className="options grid grid-cols-1 gap-3">
-        <div className="flex items-center border w-full md:w-3/4 mx-auto rounded-md bg-white">
-          <input
-            className="ml-4"
-            type="radio"
-            id={options[0]}
-            name="quiz"
-            value={options[0]}
-          />
-           {" "}
-          <label
-            onClick={(e) => findCorrectAns(e)}
-            className="w-full h-full py-2"
-            htmlFor={options[0]}
-          >
-            {options[0]}
-          </label>
-        </div>
 
-        <div className="flex items-center border w-full md:w-3/4 mx-auto rounded-md bg-white">
-          <input
-            className="ml-4"
-            type="radio"
-            id={options[1]}
-            name="quiz"
-            value={options[1]}
-          />
-           {" "}
-          <label
-            onClick={(e) => findCorrectAns(e)}
-            className="w-full h-full py-2"
-            htmlFor={options[1]}
+      {options.map((option, indx) => {
+        return (
+          <div
+            key={indx}
+            className="flex items-center border w-full md:w-3/4 mx-auto rounded-md bg-white"
           >
-            {options[1]}
-          </label>
-        </div>
-
-        <div className="flex items-center border w-full md:w-3/4 mx-auto rounded-md bg-white">
-          <input
-            className="ml-4"
-            type="radio"
-            id={options[2]}
-            name="quiz"
-            value={options[2]}
-          />
-           {" "}
-          <label
-            onClick={(e) => findCorrectAns(e)}
-            className="w-full h-full py-2"
-            htmlFor={options[2]}
-          >
-            {options[2]}
-          </label>
-        </div>
-
-        {options.length === 4 ? (
-          <div className="flex items-center border w-full md:w-3/4 mx-auto rounded-md bg-white">
             <input
               className="ml-4"
               type="radio"
-              id={options[3]}
+              id={options[indx]}
               name="quiz"
-              value={options[3]}
-            />
-             {" "}
+              value={options[indx]}
+            />{" "}
             <label
               onClick={(e) => findCorrectAns(e)}
               className="w-full h-full py-2"
-              htmlFor={options[3]}
+              htmlFor={options[indx]}
             >
-              {options[3]}
+              {options[indx]}
             </label>
           </div>
-        ) : null}
-      </div>
+        );
+      })}
 
       {isActive ? (
         <div className="mt-6">

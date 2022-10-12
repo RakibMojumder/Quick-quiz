@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Question from "../Question/Question";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus, faMultiply } from "@fortawesome/free-solid-svg-icons";
 
 const Quiz = () => {
   const [score, setScore] = useState(0);
@@ -36,35 +38,47 @@ const Quiz = () => {
       </div>
 
       <div
-        className={`score-modal w-[300px] h-[200px] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-blue-300 transition-all rounded-md flex flex-col justify-center items-center ${
+        className={`score-modal w-[300px] h-[200px] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-gray-700 text-white rounded-md flex flex-col justify-center items-center ${
           isOpen ? "show" : "hidden"
         }`}
       >
-        <p className="text-xl">
+        <p className="text-lg mt-8">
           Your correct ans is
-          <span className="text-2xl text-green-700 ml-3 font-bold">
+          <span className="text-2xl text-green-500 ml-3 font-bold">
             {score}
           </span>
         </p>
 
-        <p className="text-xl">
+        <p className="text-lg">
           Your wrong ans is{" "}
-          <span className="text-2xl text-red-700 ml-3 font-bold">
+          <span className="text-2xl text-red-500 ml-3 font-bold">
             {wrongScore}
           </span>
         </p>
 
-        <span
-          onClick={() => {
-            setOpen(false);
-            setScore(0);
-            setWrongScore(0);
-          }}
-          title="close the pop up"
-          className="text-xl font-semibold relative top-[-110px] -right-32 cursor-pointer"
-        >
-          X
-        </span>
+        <div className="relative top-[-122px] -right-24">
+          <span
+            onClick={() => {
+              setOpen(false);
+            }}
+            title="Minimize pop up"
+            className="text-lg px-3 rounded-md  font-semibold cursor-pointer"
+          >
+            <FontAwesomeIcon icon={faMinus} />
+          </span>
+
+          <span
+            onClick={() => {
+              setOpen(false);
+              setScore(0);
+              setWrongScore(0);
+            }}
+            title="close the pop up"
+            className="text-lg px-4 rounded-md font-semibold cursor-pointer"
+          >
+            <FontAwesomeIcon icon={faMultiply} />
+          </span>
+        </div>
       </div>
     </div>
   );
