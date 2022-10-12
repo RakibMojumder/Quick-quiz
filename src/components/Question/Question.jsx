@@ -3,7 +3,14 @@ import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
-const Question = ({ quest, indx }) => {
+const Question = ({
+  quest,
+  indx,
+  score,
+  setScore,
+  wrongScore,
+  setWrongScore,
+}) => {
   const [isActive, setActive] = useState(false);
   const { options, correctAnswer, question } = quest;
 
@@ -12,8 +19,12 @@ const Question = ({ quest, indx }) => {
 
     if (value === correctAnswer) {
       Swal.fire("Good job!", "Your answer is correct!", "success");
+      score++;
+      setScore(score);
     } else {
       Swal.fire("Ops!", "Your answer is wrong!", "fail");
+      wrongScore++;
+      setWrongScore(wrongScore);
     }
   };
 
