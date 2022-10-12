@@ -21,9 +21,7 @@ const Quiz = () => {
           key={quest.id}
           indx={indx}
           quest={quest}
-          score={score}
           setScore={setScore}
-          wrongScore={wrongScore}
           setWrongScore={setWrongScore}
         />
       ))}
@@ -31,7 +29,7 @@ const Quiz = () => {
       <div className="text-center">
         <button
           onClick={() => setOpen(true)}
-          className="px-6 py-1 bg-blue-500 text-slate-100 rounded-md"
+          className="px-10 py-1 bg-blue-500 text-lg text-slate-100 rounded-md"
         >
           Tap to see your score
         </button>

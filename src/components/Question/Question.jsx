@@ -3,32 +3,25 @@ import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
-const Question = ({
-  quest,
-  indx,
-  score,
-  setScore,
-  wrongScore,
-  setWrongScore,
-}) => {
+const Question = ({ quest, idx, setScore, setWrongScore }) => {
   const [isActive, setActive] = useState(false);
   const { options, correctAnswer, question } = quest;
-  const [color, setColor] = useState();
-  const [color2, setColor2] = useState();
+  const [color, setColor] = useState(false);
 
   const findCorrectAns = (e) => {
     const value = e.target.textContent;
 
     if (value === correctAnswer) {
       Swal.fire("Good job!", "Your answer is correct!", "success");
-      score++;
-      setScore(score);
-      setColor("bg-green-500");
+      setColor(true);
+      setScore((prev) => prev + 1);
     } else {
-      Swal.fire("Ops!", "Your answer is wrong!", "fail");
-      wrongScore++;
-      setWrongScore(wrongScore);
-      setColor2("bg-red-500");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Your answer is wrong!",
+      });
+      setWrongScore((prev) => prev + 1);
     }
   };
 
@@ -40,7 +33,7 @@ const Question = ({
     <div className="border bg-gray-200 rounded-md my-10 px-4 md:px-6 w-[90%] md:w-[60%] mx-auto text-center py-10">
       <p className="mb-8 relative text-lg md:text-2xl">
         <span>
-          Quiz-{indx}:
+          Quiz-{idx}:
           <span className="ml-3">{question.replace(/(<([^>]+)>)/gi, "")}</span>
         </span>
         <span
@@ -56,25 +49,27 @@ const Question = ({
         </span>
       </p>
 
-      {options.map((option, indx) => {
+      {options.map((option, idx) => {
         return (
           <div
-            key={indx}
-            className="flex items-center border w-full md:w-3/4 mx-auto rounded-md bg-white"
+            key={idx}
+            className={`flex items-center mb-3 border w-full md:w-3/4 mx-auto rounded-md bg-white ${
+              color && option === correctAnswer && "bg-green-500"
+            }`}
           >
             <input
               className="ml-4"
               type="radio"
-              id={options[indx]}
-              name="quiz"
-              value={options[indx]}
+              id={options[idx]}
+              name={options}
+              value={options[idx]}
             />{" "}
             <label
               onClick={(e) => findCorrectAns(e)}
               className="w-full h-full py-2"
-              htmlFor={options[indx]}
+              htmlFor={options[idx]}
             >
-              {options[indx]}
+              {options[idx]}
             </label>
           </div>
         );
