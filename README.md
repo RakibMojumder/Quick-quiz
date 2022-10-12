@@ -10,4 +10,4 @@ A quiz site to justify yourself what you have learned
 
 ## LIve Link
 
-Hoisted in Netlify [Quick Quiz](https://dainty-starship-83c28d.netlify.app)
+Hoisted in Netlify [Quick Quiz](https://quick-quiz-4554.netlify.app/)
