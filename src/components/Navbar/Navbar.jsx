@@ -14,7 +14,7 @@ const Navbar = () => {
           className="inline-flex items-center"
         >
           <img className="h-12" src={logo} alt="" />
-          <span className="ml-2 text-3xl font-bold tracking-wide text-gray-600 uppercase">
+          <span className="ml-2 text-3xl font-bold tracking-wide text-blue-500 italic uppercase">
             Quick Quiz
           </span>
         </NavLink>

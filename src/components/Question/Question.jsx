@@ -25,7 +25,7 @@ const Question = ({ quest, indx }) => {
     <div className="border bg-gray-200 rounded-md my-10 px-4 md:px-6 w-[90%] md:w-[60%] mx-auto text-center py-10">
       <p className="mb-8 relative text-lg md:text-2xl">
         <span>
-          Quiz No-{indx}:
+          Quiz-{indx}:
           <span className="ml-3">{question.replace(/(<([^>]+)>)/gi, "")}</span>
         </span>
         <span
